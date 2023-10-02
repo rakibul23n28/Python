@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<section class="bg-primary text-light py-5">
+    <div class="container mt-5 bg-light text-dark">
+        <div class="container">
+            <div class="row row-cols-3 p-3">
+              <div class="col p-3"><a href="{% url "todo" %}" class="btn btn-info">TODO</a></div>
+            </div>
+          </div>
+        
+      </div>
+</section>
+
+{% endblock body %}

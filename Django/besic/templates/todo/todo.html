@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% block title %}Home{% endblock title %} 
+{% block body %}
+<div>
+  <div class="container mt-5">
+      {% if todos|length != 0 %}
+    <div class="row  p-0 mt-4">
+        
+      <div class="col">
+        <div class="border">
+          
+          <div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>Status</th>
+                  <th>Priority</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {% for todo in todos|dictsort:"priority" %}
+                <tr>
+                  <td>{{forloop.counter}}</td>
+                  <td>{{todo.title}}</td>
+                  {% if todo.completed %}
+                  <td>Complited</td>
+                  {% else %}
+                  <td>Panding</td>
+                  {% endif %}
+                  <td>{{todo.priority}}</td>
+                  <td>
+                    <a href="{% url 'delete_todo' todo.id %}" title="delete" class="">🗑️</a>
+                  {% if todo.completed == False %}
+                  <a href="{% url 'change_todo' todo.id 1%}" title="Mark Complited">✅</a>
+                  {% else %}
+                  <a href="{% url 'change_todo' todo.id 0%}" title="Mark Panding">🕔</a>
+                </td>
+                  {% endif %}
+
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <a href="{% url "add_todo" %}"  class="btn btn-danger mt-1">ADD TODO</a>
+  </div>
+</div>
+<br />
+
+{% endblock body %}

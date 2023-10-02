@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% block title %}Home{% endblock title %} 
+{% block body %}
+<div>
+  <div class="container mt-5">
+    <div class="row  p-0 mt-4">
+      <div class="col-lg-4 mx-auto shadow p-0">
+        <div class="alert alert-info">
+          <h2>Add New TODO</h2>
+        </div>
+        <div class="p-4">
+          <form method="POST">
+            {% csrf_token %} {{form.as_p}}
+            <hr />
+            <input type="submit" value="ADD" class="btn btn-info" />
+          </form>
+        </div>
+      </div>
+      <div class="col">
+        <div class="border">
+          
+          <div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>Status</th>
+                  <th>Priority</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {% for todo in todos  %}
+                <tr>
+                  <td>{{forloop.counter}}</td>
+                  <td>{{todo.title}}</td>
+                  {% if todo.completed %}
+                  <td>Complited</td>
+                  {% else %}
+                  <td>Panding</td>
+                  {% endif %}
+                  <td>{{todo.priority}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <a href="{% url "todo" %}"  class="btn btn-danger mt-1">Back Todo profile</a>
+  </div>
+</div>
+<br />
+
+{% endblock body %}
