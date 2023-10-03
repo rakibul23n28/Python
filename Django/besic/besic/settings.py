@@ -135,4 +135,4 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'project23django@gmail.com'
 # DEFAULT_FROM_EMAIL = 'project23django@gmail.com'
-EMAIL_HOST_PASSWORD = 'pfffgmadswevqnqf'
+EMAIL_HOST_PASSWORD = 'xpjeduokkfgksqvk'
