@@ -10,4 +10,6 @@ urlpatterns = [
     path('register/',views.register,name='register'),
     path('logout/',views.logout,name='logout'),
     path('items/',views.items,name='items'),
+    path('activate/<str:token>/', views.activate, name='activate'),
+    
 ]
