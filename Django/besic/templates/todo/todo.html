@@ -16,6 +16,7 @@
                   <th>Title</th>
                   <th>Status</th>
                   <th>Priority</th>
+                  <th>Created at</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -31,6 +32,7 @@
                   <td>Panding</td>
                   {% endif %}
                   <td>{{todo.priority}}</td>
+                  <td>{{todo.created_at}}</td>
                   <td>
                     <a href="{% url 'delete_todo' todo.id %}" title="delete" class="">🗑️</a>
                   {% if todo.completed == False %}
