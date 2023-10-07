@@ -11,10 +11,6 @@ from authentication.decorators import unauthenticated_user,allowed_users,admin_o
 
 
 @login_required(login_url='login')
-def user_home(request):
-    return render(request,'home/user_home.html')
-
-@login_required(login_url='login')
 def todo(request):
     user=request.user
     todos = TodoItem.objects.filter(user=user)

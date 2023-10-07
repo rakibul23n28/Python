@@ -3,7 +3,7 @@ from authentication import views
 
 urlpatterns = [
     path('',views.home,name='home'),
-    path('user/',include('todo.urls')),
+    path('user/',include('users.urls')),
     path('about/',views.about,name='about'),
     path('contact/',views.contact,name='contact'),
     path('login/',views.login,name='login'),
@@ -11,5 +11,4 @@ urlpatterns = [
     path('logout/',views.logout,name='logout'),
     path('items/',views.items,name='items'),
     path('activate/<str:token>/', views.activate, name='activate'),
-    
 ]
