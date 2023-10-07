@@ -5,4 +5,4 @@ venv/
 *.pyc
 
 # Ignore __pycache__ directory
-__pycache__
+__pycache__/
