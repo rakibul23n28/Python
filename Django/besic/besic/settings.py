@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'authentication',
     'todo',
     'users',
-    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
